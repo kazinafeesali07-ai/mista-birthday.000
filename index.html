@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mista</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  background:radial-gradient(circle at top,#0b0b2e,#000);
+  font-family:'Poppins',sans-serif;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  padding:20px;
+}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+  from{opacity:0.3;}
+  to{opacity:1;}
+}
+
+/* hearts */
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:floatUp 8s linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh);opacity:0;}
+  30%{opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  border-radius:22px;
+  padding:20px;
+  max-width:420px;
+  width:100%;
+  box-shadow:0 0 40px rgba(255,0,100,0.35);
+  text-align:center;
+  z-index:1;
+}
+
+.card img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:15px;
+  box-shadow:0 0 25px rgba(255,0,120,0.4);
+}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:36px;
+  color:#ff4d8d;
+  margin-bottom:10px;
+  text-shadow:0 0 15px #ff4d8d;
+}
+
+.info{
+  font-size:14px;
+  color:#ffd6e8;
+  margin-bottom:12px;
+}
+
+p{
+  font-size:14px;
+  line-height:1.6;
+  color:#ffe6f0;
+}
+
+.footer{
+  margin-top:12px;
+  font-size:12px;
+  color:#ffb6d9;
+  opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 SONG -->
+<audio autoplay loop>
+  <source src="kulosa.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <img src="pic.jpg" alt="Mista">
+
+  <h1>Happy Birthday Mista 👑🔥</h1>
+
+  <div class="info">
+    📅 16 : 02 : 2026 <br>
+    ⏰ 12 : 00
+  </div>
+
+  <p>
+    Happy Birthday, my irresistible love 🔥❤️‍🔥<br>
+    You drive me crazy in the most delicious way 😍<br><br>
+
+    You are my desire 🔥, my weakness 🖤,<br>
+    and my sweetest temptation 😈💋<br><br>
+
+    Tonight 🌙, tomorrow ☀️, and always ♾️<br>
+    I want you just the way you are—<br>
+    mine 😌, stunning ✨, and unforgettable 🔥<br><br>
+
+    You are my favorite addiction 💖😉😗
+  </p>
+
+  <div class="footer">
+    Created by Nafees ❤️
+  </div>
+</div>
+
+<script>
+// stars
+for(let i=0;i<120;i++){
+  let s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*100+"vh";
+  document.body.appendChild(s);
+}
+
+// hearts
+const hearts=["❤️","💖","💕","💋","🔥","💘"];
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(16+Math.random()*18)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+},600);
+</script>
+
+</body>
+</html>
